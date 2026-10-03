@@ -59,8 +59,8 @@
 .record-tabs button { border-radius: 0; padding: 0 16px; height: 41px; position: relative; }
 .record-tabs button.active { color: var(--primary); }
 .record-tabs button.active::after { content: ""; height: 2px; position: absolute; inset: auto 10px 0; background: var(--primary); border-radius: 2px 2px 0 0; }
-.record-layout { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(260px, .58fr); gap: 17px; align-items: start; }
-.record-left, .record-right { display: flex; flex-direction: column; gap: 17px; }
+.record-layout { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(260px, .58fr); gap: 17px; align-items: start; min-width: 0; }
+.record-left, .record-right { display: flex; flex-direction: column; gap: 17px; min-width: 0; }
 .section-icon { background: #f1f5f9; color: #64748b; }
 .info-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); padding: 8px 19px 18px; gap: 0 24px; }
 .info-row { display: flex; flex-direction: column; gap: 5px; padding: 11px 0; border-bottom: 1px solid #eff2f6; }
@@ -79,7 +79,7 @@
 .treatment-timeline { background: white; border: 1px solid var(--line); border-radius: 13px; box-shadow: var(--shadow); overflow: hidden; }
 .panel .treatment-timeline { border: 0; box-shadow: none; border-radius: 0; }
 .timeline-legend { display: flex; gap: 12px; font-size: 8px; color: var(--muted); }.timeline-legend span { display: flex; align-items: center; gap: 4px; }.timeline-legend i { width: 7px; height: 7px; border-radius: 50%; }.timeline-legend .complete { background: var(--green); }.timeline-legend .pending { background: var(--primary); }.timeline-legend .missed { background: var(--red); }
-.timeline-scroll { overflow-x: auto; padding-bottom: 3px; }
+.timeline-scroll { min-width: 0; overflow-x: auto; padding-bottom: 3px; }
 .hours-row, .treatment-row { display: grid; grid-template-columns: 130px repeat(24, minmax(26px, 1fr)); min-width: 850px; }
 .hours-row { min-height: 31px; background: #fafbfc; align-items: center; color: #8794a6; font-size: 8px; }
 .hours-row > span { padding-left: 18px; text-transform: uppercase; font-weight: 700; }.hours-row b { text-align: center; font-weight: 600; }

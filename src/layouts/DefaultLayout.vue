@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 import AppSidebar from '@/components/layout/AppSidebar.vue'
 import AppTopbar from '@/components/layout/AppTopbar.vue'
 import AppIcon from '@/components/common/AppIcon.vue'
@@ -8,10 +8,33 @@ import AppModal from '@/components/common/AppModal.vue'
 import { useToast } from '@/composables/useToast'
 
 const router = useRouter()
+const route = useRoute()
 const { toastMessage, notify, dismiss } = useToast()
 
 const menuOpen = ref(false)
 const modal = ref(null) // null | 'observation' | 'transmission'
+
+const mobileNavItems = [
+  { name: 'dashboard', label: 'Accueil', icon: 'grid' },
+  { name: 'patients', label: 'Patients', icon: 'users' },
+  { name: 'patient-record', label: 'Dossiers', icon: 'file' },
+  { name: 'transmissions', label: 'Transmissions', icon: 'message' },
+]
+
+function isMobileNavActive(name) {
+  if (name === 'patient-record') {
+    return route.name === 'patient-record' || route.name === 'patient-edit'
+  }
+  return route.name === name
+}
+
+function navigateMobile(name) {
+  if (name === 'patient-record') {
+    router.push({ name: 'patient-record', params: { id: 'DEM-2026-001' } })
+    return
+  }
+  router.push({ name })
+}
 
 function openModal(type) {
   modal.value = type
@@ -61,15 +84,10 @@ function handleLogout() {
     </div>
     <nav class="mobile-nav">
       <button
-        v-for="item in [
-          { name: 'dashboard', label: 'Accueil', icon: 'grid' },
-          { name: 'patients', label: 'Patients', icon: 'users' },
-          { name: 'transmissions', label: 'Transmissions', icon: 'message' },
-          { name: 'notifications', label: 'Notifications', icon: 'bell' },
-        ]"
+        v-for="item in mobileNavItems"
         :key="item.name"
-        :class="$route.name === item.name ? 'active' : ''"
-        @click="$router.push({ name: item.name })"
+        :class="isMobileNavActive(item.name) ? 'active' : ''"
+        @click="navigateMobile(item.name)"
       >
         <AppIcon :name="item.icon" />
         <span>{{ item.label }}</span>

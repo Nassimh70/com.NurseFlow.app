@@ -36,7 +36,6 @@
   .record-main .page-actions { justify-content: flex-end; }
   .settings-layout { grid-template-columns: 1fr; }
   .settings-layout > .settings-card:only-child { grid-column: auto; }
-  .patient-management-table table th:nth-child(1), .patient-management-table table td:nth-child(1) { display: none; }
 }
 
 @media (max-width: 680px) {
@@ -89,6 +88,7 @@
   .table-wrap td { height: auto; padding: 0; border: 0; white-space: normal; font-size: 10px; }
   .table-wrap td::before { content: attr(data-label); display: block; font-size: 8px; text-transform: uppercase; color: #94a3b8; margin-bottom: 3px; }
   .table-wrap td:first-child { grid-column: 1 / -1; }
+  .patient-management-table .table-wrap td:first-child { display: block; }
   .table-wrap td:first-child::before { display: none; }
   .table-wrap .row-actions { position: absolute; top: 13px; right: 9px; }
   .table-wrap .row-actions .btn span { display: none; }
