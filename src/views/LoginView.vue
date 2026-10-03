@@ -29,7 +29,7 @@ function onLogin() {
         <AppIcon name="shield" :size="28" />
       </div>
       <h1>Bienvenue</h1>
-      <p>Connectez-vous à votre espace de soins sécurisé.</p>
+      <p>Connectez-vous à votre espace de soins.</p>
       
       <label class="field">
         <span>Identifiant</span>

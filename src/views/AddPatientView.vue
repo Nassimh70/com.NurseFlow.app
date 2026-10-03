@@ -1,5 +1,4 @@
 <script setup>
-import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import PageTitle from '@/components/common/PageTitle.vue'
 import AppButton from '@/components/common/AppButton.vue'
@@ -10,7 +9,6 @@ import AppSelect from '@/components/forms/AppSelect.vue'
 const router = useRouter()
 const emit = defineEmits(['notify'])
 
-const edit = false
 
 function submit() {
   emit('notify', 'Dossier patient créé avec succès')

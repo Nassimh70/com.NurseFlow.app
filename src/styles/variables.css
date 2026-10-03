@@ -5,9 +5,7 @@
   box-sizing: border-box;
 }
 
-/* Base Theme Configuration - Premium Unified System */
 :root {
-  /*home root config*/
   --blue: #0284c7;
   --blue-dark: #0c4a6e;
   --blue-deep: #0c4a6e;

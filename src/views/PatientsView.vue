@@ -46,7 +46,7 @@ const visible = computed(() => {
           <AppIcon name="search" :size="18" />
           <input
             v-model="query"
-            placeholder="Rechercher un patient, chambre ou ID..."
+            placeholder="Rechercher un patient..."
           />
         </label>
         <div class="filter-tabs">
@@ -69,16 +69,6 @@ const visible = computed(() => {
       </div>
       <EmptyState v-else />
 
-      <div class="pagination">
-        <span>Affichage de 1 à {{ visible.length }} sur 24 patients</span>
-        <div>
-          <button disabled>Précédent</button>
-          <button class="active">1</button>
-          <button>2</button>
-          <button>3</button>
-          <button>Suivant</button>
-        </div>
-      </div>
     </section>
   </div>
 </template>

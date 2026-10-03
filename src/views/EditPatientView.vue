@@ -1,5 +1,4 @@
 <script setup>
-import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import PageTitle from '@/components/common/PageTitle.vue'
 import AppButton from '@/components/common/AppButton.vue'

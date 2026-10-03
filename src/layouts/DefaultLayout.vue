@@ -56,7 +56,6 @@ function handleLogout() {
   router.push({ name: 'login' })
 }
 
-// Expose openModal so child views can use it via provide/inject or router
 </script>
 
 <template>
